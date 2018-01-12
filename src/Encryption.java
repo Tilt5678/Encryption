@@ -49,7 +49,7 @@ public class Encryption {
 	}
 
 	public static void encode() {
-
+		System.out.println("No special characters except .,!?");
 		System.out.println("What would you like to encode? ");
 		Scanner sc2 = new Scanner(System.in);
 		String line = sc2.nextLine();
@@ -63,7 +63,7 @@ public class Encryption {
 			sb.append(edit);
 		}
 		String sample = sb.toString();
-		
+		//System.out.println(sample);
 
 		Random r = new Random();
 		for (int i = 0; i < sample.length(); i++) {
@@ -85,7 +85,7 @@ public class Encryption {
 		Scanner sc1 = new Scanner(System.in);
 		String code = sc1.nextLine();
 		StringBuilder sb = new StringBuilder(code);
-		// System.out.println(code);
+		//System.out.println(code);
 		int y = code.length();
 		for (int i = 1; i < code.length(); i += 4) {
 			sb.setCharAt(i, '.');
@@ -94,7 +94,7 @@ public class Encryption {
 		for (int i = 0; i < y; i += 4) {
 
 			String send = code.substring(i, i + 4);
-			// System.out.println(send + " " + i);
+			//System.out.println(send + " " + i);
 			interp(send);
 
 		}
@@ -103,9 +103,11 @@ public class Encryption {
 	}
 
 	public static void interp(String send) {
-		// System.out.println(send);
+		//System.out.println(send);
 		float y = Float.parseFloat(send);
-		double z = y * 100;
+		//System.out.println(y);
+		float z = y * 100 + (float).001;
+		//System.out.println(z);
 		int x = (int) z;
 		// System.out.println(x);
 		System.out.print(Character.toChars(x));
